@@ -28,5 +28,5 @@ abstract class Potwory {
 	}
 	
 	//Nadpisane
-	abstract void getInfo();
+	abstract double dropItem();
 }

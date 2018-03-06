@@ -21,19 +21,20 @@ class Assasin extends Postac{
 		super.hitPower += 1;
 		
 		//HP
-		if (super.hp == 12) {
+		if (super.lvl == 8) {
 			super.hp += 1;
+			super.maxHp += 1;
 		}
 		//Sila ataku
-		if (super.hitPower == 8 && super.hitPower == 10 && super.hitPower == 12) {
+		if (super.lvl == 4 || super.lvl == 6 || super.lvl == 8) {
 			super.hitPower += 1;
 		}
 	}
 
 	@Override
-	protected void getInfo() {
-		System.out.println("Assain: "+ this.name + "  ||  " + (int)this.hp + " HP LVL: " + (int)this.lvl + " EXP: " + (int)this.exp +" ATT: "
-				+ (int)this.hitPower);
+	public String toString() {
+		return "Assain: "+ this.name + "  ||  " + (int)this.hp + " HP LVL: " + (int)this.lvl + " EXP: " + (int)this.exp +" ATT: "
+				+ (int)this.hitPower;
 	}
 
 }

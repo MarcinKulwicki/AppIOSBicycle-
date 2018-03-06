@@ -26,7 +26,7 @@ public class ManuFight {
 		//Tworzy postac bohatera
 		CreateChar createChar = new CreateChar();
 		Hero = createChar.createChar("Marcin");
-		Hero.getInfo();
+		System.out.println(Hero);
 		
 		
 		
@@ -35,8 +35,8 @@ public class ManuFight {
 		Monster = createChar.createMonster();
 		
 		System.out.println("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
-		Hero.getInfo();
-		Monster.getInfo();
+		System.out.print(Hero);
+		System.out.println(Monster);
 		
 		i=0;
 		do {
@@ -67,8 +67,8 @@ public class ManuFight {
 		}
 		i = 0;
 		System.out.println("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
-		Hero.getInfo();
-		Monster.getInfo();
+		System.out.println(Hero);
+		System.out.println(Monster);
 		}while (i != 1 && i != 2);
 	}	
 	

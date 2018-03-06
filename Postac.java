@@ -9,16 +9,59 @@ abstract class Postac {
 	protected double lvl;
 	protected double exp;
 	protected double hitPower;
+	protected double[] equipment;
+	
+	
 	
 	Postac (){
 		this.lvl = 0;
 		this.exp = 0;
+		this.equipment = new double[4];
+	}
+	
+	protected void equipment(double x){
+		//1-tarcza, 2- armor, 3- topor, 4- miecz
+		if (x == 1) {
+			if (this.equipment[0] == 0) {
+				this.equipment[0] = 1;
+				this.hp += 1;
+				this.maxHp += 1;
+				System.out.println("Wypadla Ci tarcza +1 do obrony");
+			}
+		}
+		if (x == 2) {
+			if (this.equipment[1] == 0) {
+				this.equipment[1] = 1;
+				this.hp += 2;
+				this.maxHp += 2;
+				System.out.println("Wypadl Ci armor +2 do obrony");
+			}
+		}
+		if (x == 3) {
+			if (this.equipment[2] == 0) {
+				this.equipment[2] = 1;
+				this.hitPower += 1;
+				System.out.println("Wypadl Ci topor +1 do ataku");
+			}
+		}
+		if (x == 4) {
+			if (this.equipment[3] == 0) {
+				this.equipment[3] = 1;
+				this.hitPower += 2;
+				System.out.println("Wypadl Ci miesz +2 do ataku");
+			}
+		}
+		
 	}
 	
 	protected double hitPower() {
 		Random r = new Random();
 		int x = r.nextInt(6)+1;
 		return this.hitPower+x;
+	}
+	
+	protected void setHitPower(double x) {
+		this.hitPower += x;
 	}
 
 	protected void getHit() {
@@ -49,6 +92,5 @@ abstract class Postac {
 	
 	//Nadpisane metody
 	abstract protected void lvlUp();
-	abstract protected void getInfo();
 	
 }

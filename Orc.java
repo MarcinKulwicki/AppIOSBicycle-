@@ -1,8 +1,8 @@
 package Rozgrywka;
 
+import java.util.Random;
 
-
-public class Orc extends Potwory {
+class Orc extends Potwory {
 
 	Orc(double dif) {
 		if (dif == 0) {
@@ -15,7 +15,23 @@ public class Orc extends Potwory {
 	}
 	
 	@Override
-	protected void getInfo() {
-		System.out.println("Orc || " + (int)super.hitPower + " Hit Power LVL: " + (int)super.lvl);	
+	public String toString() {
+		return "Orc || " + (int)super.hitPower + " Hit Power LVL: " + (int)super.lvl;
+	}
+	
+	
+	@Override
+	protected double dropItem() {
+		Random r = new Random();
+		int x = r.nextInt(25);
+		if (x < 4 ) {
+			//System.out.println("Wypadl Ci topor! + 1 do ataku");
+			return 3;
+		}
+		if (x>22) {
+			//System.out.println("Wypadl Ci armor +2 do obrony");
+			return 2;
+		}
+		return 0;
 	}
 }

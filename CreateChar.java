@@ -64,6 +64,9 @@ public class CreateChar {
 		case 1:
 			Potwory Monster2 = new Orc(this.monsterLvl);
 			return Monster2;
+		case 2:
+			Potwory Monster3 = new Monk(this.monsterLvl);
+			return Monster3;
 		}
 		Potwory Monster = new Troll(1);
 		return Monster;
@@ -73,12 +76,12 @@ public class CreateChar {
 	void choseMonster() {
 		int chose;
 		int i;
-		System.out.println("Wybierz wroga: 1. Troll 2. Orc");
+		System.out.println("Wybierz wroga: 1. Troll 2. Orc 3. Monk");
 		do {
 			chose = this.read.nextInt();
 			i = chose - 1;
 			this.choseMonster = chose - 1 ;
-		} while (i != 0 && i != 1);
+		} while (i != 0 && i != 1 && i!= 2);
 		
 		System.out.println("Wybierz poziom wroga od 1");
 		do {

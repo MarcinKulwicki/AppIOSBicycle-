@@ -1,8 +1,8 @@
 package Rozgrywka;
 
+import java.util.Random;
 
-
-public class Troll extends Potwory {
+class Troll extends Potwory {
 	
 
 	Troll(double dif) {
@@ -14,12 +14,20 @@ public class Troll extends Potwory {
 		super.lvl = 1 * dif;
 		super.exp = 15 * dif;
 	}
-
-	@Override
-	protected void getInfo() {
-		
-		System.out.println("Troll || " + (int)super.hitPower + " Hit Power LVL: " + (int)super.lvl);
-	}
 	
+	@Override
+	protected double dropItem() {
+		Random r = new Random();
+		int x = r.nextInt(10);
+		if (x < 3 ) {
+			//System.out.println("Wypadla Ci tarcza! + 1 do obrony");
+			return 1;
+		}
+			return 0;
+	}
+	@Override
+	public String toString() {
+		return "Troll || " + (int)super.hitPower + " Hit Power LVL: " + (int)super.lvl;
+	}
 
 }

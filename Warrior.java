@@ -22,18 +22,19 @@ class Warrior extends Postac {
 		super.hitPower += 1;
 		
 		//HP
-		if (super.hp == 8 && super.hp == 10 && super.hp == 12) {
+		if (super.lvl == 4 || super.hp == 6 || super.hp == 8) {
 			super.hp += 1;
+			super.maxHp += 1;
 		}
 		//Sila ataku
-		if (super.hitPower == 12) {
+		if (super.lvl == 8) {
 			super.hitPower += 1;
 		}
 	}
 
 	@Override
-	protected void getInfo() {
-		System.out.println("Warrior: "+ this.name + "  ||  " + (int)super.hp + " HP LVL: " + (int)super.lvl + " EXP: " + (int)super.exp +" ATT: "
-				+ (int)super.hitPower);
+	public String toString() {
+		return "Warrior: "+ this.name + "  ||  " + (int)super.hp + " HP LVL: " + (int)super.lvl + " EXP: " + (int)super.exp +" ATT: "
+				+ (int)super.hitPower;
 	}
 }

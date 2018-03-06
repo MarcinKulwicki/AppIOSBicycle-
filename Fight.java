@@ -25,6 +25,11 @@ public class Fight {
 					System.out.println("WYGRANA  " + "ATT Hero: "+ hitPowerHero + " ATT Monster: "+ hitPowerMonster);
 					Hero.expUp(Monster.expGive());
 					
+					if (Monster instanceof Monk) {
+						Hero.setHitPower(((Monk)Monster).effAtt());
+					}
+					Hero.equipment(Monster.dropItem());
+					
 				}else if (hitPowerHero == hitPowerMonster) {
 					System.out.println("REMIS " + "ATT Hero: "+ hitPowerHero + " ATT Monster: "+ hitPowerMonster);
 				}
