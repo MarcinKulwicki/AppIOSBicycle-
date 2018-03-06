@@ -1,33 +1,18 @@
 package Rozgrywka;
 
-import java.util.Random;
 
-public class Mag extends Postac {
-	private double hp;
-	private double maxHp;
-	private double lvl;
-	private double exp;
-	private double hitPower;
+
+class Mag extends Postac {
+	
 	private String name;
-
+	
 	Mag(String n) {
 		this.name = n;
-		this.hp = 80;
-		this.maxHp = 80;
-		this.lvl = 0;
-		this.exp = 0;
-		this.hitPower = 7;
-	}
-
-	public double setHit() {
-		Random r = new Random();
-		int x = r.nextInt(7)-3;
-		return this.hitPower+x;
-	}
-	public void getHit(double getHit) {
-		this.hp -= getHit;
-		if (this.hp < 0)
-			this.hp = 0;
+		super.hp = 80;
+		super.maxHp = 80;
+		super.lvl = 0;
+		super.exp = 0;
+		super.hitPower = 7;
 	}
 
 	public void lvlUp() {
@@ -36,28 +21,9 @@ public class Mag extends Postac {
 		this.hitPower += 12;
 	}
 	
-	public double expUp(double expUp) {
-		this.exp += expUp;
-		double expUNeed = 50+((this.lvl+1)*15);
-		if(this.exp >= expUNeed){
-			this.exp = 0;
-			this.lvl += 1;
-			this.lvlUp();
-		}
-		return expUNeed;
-	}
-
 	public void getInfo() {
-		//System.out.println("Mag: " + this.name + " HP: " + this.hp + " LVL: " + this.lvl + " EXP: " + this.exp
-		//		+ " ATT: " + this.hitPower);
 		System.out.println("Mag: "+ this.name + "  ||  " + (int)this.hp + " HP LVL: " + (int)this.lvl + " EXP: " + (int)this.exp +" ATT: "
 				+ (int)this.hitPower);
 
-	}
-	double getHP() {
-		return this.hp;
-	}
-	void healUP() {
-		this.hp += 10;
 	}
 }

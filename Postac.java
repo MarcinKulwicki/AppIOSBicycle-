@@ -1,25 +1,49 @@
 package Rozgrywka;
 
-public abstract class Postac {
-	double setHit() {
-		return 0;
+import java.util.Random;
+
+abstract class Postac {
+	
+	protected double hp;
+	protected double maxHp;
+	protected double lvl;
+	protected double exp;
+	protected double hitPower;
+	
+	public double setHit() {
+		Random r = new Random();
+		int x = r.nextInt(7)-3;
+		return this.hitPower+x;
 	}
 
-	void getHit(double getHit) {
+	public void getHit(double getHit) {
+		this.hp -= getHit;
+		if (this.hp < 0)
+			this.hp = 0;
 	}
-
-	void lvlUp() {
+	
+	public double expUp(double expUp) {
+		this.exp += expUp;
+		double expUNeed = 50+((this.lvl+1)*15);
+		if(this.exp >= expUNeed){
+			this.exp = 0;
+			this.lvl += 1;
+			lvlUp();
+		}
+		return expUNeed;
 	}
-
-	void getInfo() {
+	public double getHP() {
+		return this.hp;
 	}
-	double expUp(double expUp) {
-		return 0;
+	public void healUp(){
+		this.hp += 20;
+		if (this.hp > this.maxHp) {
+			this.hp = this.maxHp;
+		}
 	}
-	double getHP() {
-		return 0;
-	}
-	void healUp(){
-		
-	}
+	
+	//Nadpisane metody
+	void lvlUp() {}
+	void getInfo() {}
+	
 }

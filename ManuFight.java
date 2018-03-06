@@ -18,6 +18,7 @@ public class ManuFight {
 	
 	
 	public void manuFight () {
+		int i=0;
 		//Tworzy defaultowe obiekty 
 		Postac Hero = new Mag("Karolina");
 		Potwory Monster = new Troll(1);
@@ -27,16 +28,19 @@ public class ManuFight {
 		Hero = createChar.createChar("Marcin");
 		Hero.getInfo();
 		
+		
+		
+		
 		//Tworzy potwora
 		Monster = createChar.createMonster();
 		
 		Monster.getInfo();
 		
-		int i=0;
+		i=0;
 		do {
 			
 			if(i != 1 && i !=2) {
-		System.out.println("1: Walcz 2: Zmień przeciwnika");
+		System.out.println("1: Walcz 2: Zmień przeciwnika 3: Ulecz sie");
 		i = read.nextInt();
 			}
 		
@@ -53,6 +57,10 @@ public class ManuFight {
 			Monster = createChar.createMonster();
 			
 			break;
+		case 2:
+			//Leczenie
+			Hero.healUp();
+			break;
 		
 		}
 		i = 0;
@@ -61,6 +69,7 @@ public class ManuFight {
 		Monster.getInfo();
 		}while (i != 1 && i != 2);
 	}	
+	
 	
 	
 	//Chce zrobic prywatne metody do pojedynczejWalki oraz do wyboru poziomu Trolla badz Orca 

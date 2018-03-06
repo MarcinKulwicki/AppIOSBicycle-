@@ -26,7 +26,10 @@ public class CreateChar {
 			
 		case 1:
 			Postac Hero2 = new Mag(name);
-			return Hero2;		
+			return Hero2;
+		case 2:
+			Postac Hero3 = new Assasin(name);
+			return Hero3;
 	}
 		//Randomowy bohater
 		Postac Hero0 = new Warrior(name);
@@ -34,7 +37,7 @@ public class CreateChar {
 	}
 	//************ metoda do wyboru postaci wywolanie jej jest w metodzie Tworzenia postaci Bohatera
 		int choseChar() {
-			System.out.println("Wybierz postac: 1. Warrior 2.Mag");
+			System.out.println("Wybierz postac: 1. Warrior 2.Mag 3. Assasin");
 			int chose;
 			
 			int i;
@@ -44,7 +47,7 @@ public class CreateChar {
 				this.choseChar = i-1;
 				
 				}
-			while (i != 1 && i != 2);
+			while (i != 1 && i != 2 && i != 3);
 			return this.choseChar;
 		}
 	
