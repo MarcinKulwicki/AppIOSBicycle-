@@ -8,15 +8,14 @@ public class Orc extends Potwory {
 		if (dif == 0) {
 			dif = 1;
 		}
-		super.hp = 20 + (dif * 15);
-		super.hpSpawn = super.hp;
+		super.hitPower = 2 + (dif * 4);
+		super.hpSpawn = super.hitPower;
 		super.lvl = 1 * dif;
 		super.exp = 15 * dif;
-		super.hitPower = 3 * dif;
 	}
-
-	public void getInfo() {
-		System.out.println("Orc || " + (int)this.hp + " HP LVL: " + (int)this.lvl + " ATT: " + (int)this.hitPower);
-				
+	
+	@Override
+	protected void getInfo() {
+		System.out.println("Orc || " + (int)super.hitPower + " Hit Power LVL: " + (int)super.lvl);	
 	}
 }

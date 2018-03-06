@@ -9,17 +9,16 @@ public class Troll extends Potwory {
 		if (dif == 0) {
 			dif = 1;
 		}
-		super.hp = 10 + (dif * 10);
-		super.hpSpawn = super.hp;
+		super.hitPower = 1 + (dif * 3);
+		super.hpSpawn = super.hitPower;
 		super.lvl = 1 * dif;
 		super.exp = 15 * dif;
-		super.hitPower = 5 * dif;
 	}
 
-
-	public void getInfo() {
+	@Override
+	protected void getInfo() {
 		
-		System.out.println("Troll || " + (int)this.hp + " HP LVL: " + (int)this.lvl + " ATT: " + (int)this.hitPower);
+		System.out.println("Troll || " + (int)super.hitPower + " Hit Power LVL: " + (int)super.lvl);
 	}
 	
 

@@ -2,38 +2,31 @@ package Rozgrywka;
 
 import java.util.Random;
 
-public abstract class Potwory {
+abstract class Potwory {
 	
-	protected double hp;
 	protected double lvl;
 	protected double exp;
 	protected double hitPower;
 	protected double hpSpawn;
 	
-	double setHit() {
+	double hitPower() {
 		
 		Random r = new Random();
-		int x = r.nextInt(7)-3;
+		int x = r.nextInt(6)+1;
 		return this.hitPower+x;
-	}
-	void getHit(double getHit){
-		
-		this.hp -= getHit;
-		if (this.hp < 0)
-			this.hp = 0;
 	}
 
 	double expGive() {
 		return this.exp;
 	}
 	
-	double getHP() {
-		return this.hp;
+	double gethitPower() {
+		return this.hitPower;
 	}
 	void spawn() {
-		this.hp = this.hpSpawn;
+		this.hitPower = this.hpSpawn;
 	}
 	
-	//Nadpisane metody
-	void getInfo() {	}
+	//Nadpisane
+	abstract void getInfo();
 }

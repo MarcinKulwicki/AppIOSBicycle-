@@ -34,6 +34,8 @@ public class ManuFight {
 		//Tworzy potwora
 		Monster = createChar.createMonster();
 		
+		System.out.println("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
+		Hero.getInfo();
 		Monster.getInfo();
 		
 		i=0;
